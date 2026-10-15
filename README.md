@@ -29,5 +29,5 @@ Para actualizar a una nueva versión de Bevy: [dragon/UPSTREAM.md](dragon/UPSTRE
 ## Créditos y licencia
 
 MIT o Apache-2.0, a tu elección.
-Basado en [Bevy](https://github.com/bevyengine/bevy). El editor parte de [Jackdaw](https://github.com/jbuehler23/jackdaw).
+Basado en [Bevy](https://github.com/bevyengine/bevy).
 Desarrollado por **RD**.

@@ -55,11 +55,13 @@ El editor se puede controlar desde fuera (Bevy Remote Protocol + MCP). Esto perm
 
 ---
 
-## Cómo nos relacionamos con Bevy y con Jackdaw
+## Cómo nos relacionamos con Bevy
 
-- **Bevy es nuestro único upstream.** Seguimos sus versiones estables (`v0.20.0`, `v0.21.0`, …). El código de Bevy en este repo se modifica lo mínimo posible; todo lo nuestro vive en `dragon/`.
-- **El editor es nuestro.** Partimos del código de [Jackdaw](https://github.com/jbuehler23/jackdaw) (MIT/Apache-2.0, con crédito a su autor), pero desde ese momento lo mantenemos nosotros. No esperamos las actualizaciones de Jackdaw: cuando Bevy cambia, nosotros migramos.
+- **Bevy es nuestra única base y nuestro único upstream.** Seguimos sus versiones estables (`v0.20.0`, `v0.21.0`, …). El código de Bevy en este repo se modifica lo mínimo posible; todo lo nuestro vive en `dragon/`.
+- **El editor es nuestro, construido desde cero sobre Bevy.** No partimos del código de ningún otro editor de terceros. Cuando Bevy cambia, nosotros migramos.
 - Si algo que construimos sirve a toda la comunidad, intentamos devolverlo a Bevy.
+
+El estado del desarrollo y los pasos siguientes están en [ROADMAP.md](ROADMAP.md). Las reglas que gobiernan el proyecto están en la [constitución](../.specify/memory/constitution.md).
 
 ---
 
