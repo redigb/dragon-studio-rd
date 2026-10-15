@@ -1,6 +1,6 @@
 # Actualizar Bevy en Dragon Studio RD
 
-Seguimos solo versiones estables de Bevy (tags `vX.Y.Z`), nunca `main`.
+Seguimos solo versiones estables de Bevy (tags `vX.Y.Z`), nunca el `main` de Bevy.
 
 ```sh
 # una sola vez
