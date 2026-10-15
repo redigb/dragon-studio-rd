@@ -23,5 +23,6 @@ Después:
 
 - Los cambios a archivos de Bevy (fuera de `dragon/`) van en commits pequeños con el prefijo `[bevy]`. Cuantos menos, más fácil el rebase.
 - Todo lo que pueda ser un plugin vive en `dragon/`.
+- Única excepción: el `README.md` de la raíz es nuestro. Si choca en el rebase, conserva el nuestro (`git checkout --theirs README.md`; durante un rebase, "theirs" son nuestros commits).
 
 Versión de Bevy actual: **v0.20.0**
