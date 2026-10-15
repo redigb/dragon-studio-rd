@@ -8,8 +8,8 @@ git remote add upstream https://github.com/bevyengine/bevy.git
 
 # con cada versión nueva de Bevy (ejemplo: v0.21.0)
 git fetch upstream tag v0.21.0 --no-tags
-git checkout dragon
-git rebase --onto v0.21.0 v0.20.0 dragon   # re-aplica nuestros commits encima de la nueva versión
+git checkout main
+git rebase --onto v0.21.0 v0.20.0 main   # re-aplica nuestros commits encima de la nueva versión
 ```
 
 Después:
