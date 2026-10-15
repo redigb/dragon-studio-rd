@@ -1,0 +1,2 @@
+# Los scripts de spec-kit se ejecutan con bash: deben conservar finales de línea LF.
+*.sh text eol=lf
