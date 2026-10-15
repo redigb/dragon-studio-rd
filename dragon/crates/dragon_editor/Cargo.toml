@@ -1,0 +1,19 @@
+[package]
+name = "dragon_editor"
+description = "Editor visual de Dragon Studio RD"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "dragon_editor"
+path = "src/main.rs"
+
+[features]
+# Solo para desarrollo: nunca en builds de distribución (principio III).
+dev = ["bevy/dynamic_linking", "bevy/file_watcher"]
+
+[dependencies]
+bevy.workspace = true

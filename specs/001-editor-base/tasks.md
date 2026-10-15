@@ -22,19 +22,19 @@ formato de valores, árbol de la Jerarquía); las historias se validan con `quic
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-- [ ] T001 Crear el workspace en `dragon/Cargo.toml` con `[workspace.dependencies] bevy = "0.20"` (+ `bevy_feathers`), `[patch.crates-io] bevy = { path = ".." }` y perfiles `dev` (opt-level 1 / dependencias 3)
-- [ ] T002 [P] Crear `dragon/.cargo/config.toml` con `linker = "rust-lld.exe"` para `x86_64-pc-windows-msvc` y los alias `dev` y `distrib`
-- [ ] T003 [P] Crear `dragon/.gitignore` que reincluya `Cargo.lock`
-- [ ] T004 Crear `dragon/crates/dragon_editor/Cargo.toml` (lib + bin, feature `dev` = `bevy/dynamic_linking` + `bevy/file_watcher`)
+- [x] T001 Crear el workspace en `dragon/Cargo.toml` con `[workspace.dependencies] bevy = "0.20"` (+ `bevy_feathers`), `[patch.crates-io] bevy = { path = ".." }` y perfiles `dev` (opt-level 1 / dependencias 3)
+- [x] T002 [P] Crear `dragon/.cargo/config.toml` con `linker = "rust-lld.exe"` para `x86_64-pc-windows-msvc` y los alias `dev` y `distrib`
+- [x] T003 [P] Crear `dragon/.gitignore` que reincluya `Cargo.lock`
+- [x] T004 Crear `dragon/crates/dragon_editor/Cargo.toml` (lib + bin, feature `dev` = `bevy/dynamic_linking` + `bevy/file_watcher`)
 
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
-- [ ] T005 Definir `EditorOnly`, `EditorStartup`, `DRAGON_VERSION`, `BEVY_VERSION` y `DragonEditorPlugins` en `dragon/crates/dragon_editor/src/lib.rs`
-- [ ] T006 [P] Implementar el tema (colores, tamaños, recurso `EditorFonts`) y `ThemePlugin` en `dragon/crates/dragon_editor/src/theme.rs`
-- [ ] T007 [P] Implementar `Selection` y `SelectionPlugin` (limpieza cuando la entidad desaparece, FR-013) en `dragon/crates/dragon_editor/src/selection.rs`
-- [ ] T008 Crear `dragon/crates/dragon_editor/src/main.rs` con `DefaultPlugins` (ventana "Dragon Studio RD"), `FeathersPlugins` y `DragonEditorPlugins`
+- [x] T005 Definir `EditorOnly`, `EditorStartup`, `DRAGON_VERSION`, `BEVY_VERSION` y `DragonEditorPlugins` en `dragon/crates/dragon_editor/src/lib.rs`
+- [x] T006 [P] Implementar el tema (colores, tamaños, recurso `EditorFonts`) y `ThemePlugin` en `dragon/crates/dragon_editor/src/theme.rs`
+- [x] T007 [P] Implementar `Selection` y `SelectionPlugin` (limpieza cuando la entidad desaparece, FR-013) en `dragon/crates/dragon_editor/src/selection.rs`
+- [x] T008 Crear `dragon/crates/dragon_editor/src/main.rs` con `DefaultPlugins` (ventana "Dragon Studio RD"), `FeathersPlugins` y `DragonEditorPlugins`
 
 **Checkpoint**: el workspace compila y abre una ventana vacía.
 
@@ -46,11 +46,11 @@ formato de valores, árbol de la Jerarquía); las historias se validan con `quic
 
 **Independent Test**: `cargo dev`; ver las cinco zonas; redimensionar sin deformación.
 
-- [ ] T009 [US1] Implementar `ShellPlugin` (raíz de UI, barra superior con nombre y menús Archivo/Editar/Ver/Ayuda, zonas marcadas) en `dragon/crates/dragon_editor/src/shell.rs`
-- [ ] T010 [US1] Implementar la cámara del editor con render a textura y el nodo `ViewportNode` dentro de `SceneViewport` en `dragon/crates/dragon_editor/src/viewport.rs`
-- [ ] T011 [P] [US1] Implementar `DemoScenePlugin` (Suelo, Cubo, Torre, Planeta en rotación con hija Luna, Sol) en `dragon/crates/dragon_editor/src/demo_scene.rs`
-- [ ] T012 [P] [US1] Implementar `StatusBarPlugin` (versión de Dragon, versión de Bevy, FPS cada 0,25 s) en `dragon/crates/dragon_editor/src/status_bar.rs`
-- [ ] T013 [US1] Montar paneles vacíos de Jerarquía e Inspector con su encabezado para completar el layout (`hierarchy.rs`, `inspector.rs`)
+- [x] T009 [US1] Implementar `ShellPlugin` (raíz de UI, barra superior con nombre y menús Archivo/Editar/Ver/Ayuda, zonas marcadas) en `dragon/crates/dragon_editor/src/shell.rs`
+- [x] T010 [US1] Implementar la cámara del editor con render a textura y el nodo `ViewportNode` dentro de `SceneViewport` en `dragon/crates/dragon_editor/src/viewport.rs`
+- [x] T011 [P] [US1] Implementar `DemoScenePlugin` (Suelo, Cubo, Torre, Planeta en rotación con hija Luna, Sol) en `dragon/crates/dragon_editor/src/demo_scene.rs`
+- [x] T012 [P] [US1] Implementar `StatusBarPlugin` (versión de Dragon, versión de Bevy, FPS cada 0,25 s) en `dragon/crates/dragon_editor/src/status_bar.rs`
+- [x] T013 [US1] Montar paneles vacíos de Jerarquía e Inspector con su encabezado para completar el layout (`hierarchy.rs`, `inspector.rs`)
 
 **Checkpoint**: historia 1 verificable de forma independiente.
 
@@ -62,9 +62,9 @@ formato de valores, árbol de la Jerarquía); las historias se validan con `quic
 
 **Independent Test**: cambiar una línea, `cargo dev`, cronometrar.
 
-- [ ] T014 [US2] Verificar que `cargo dev` usa `dynamic_linking` y `rust-lld` (compilación completa exitosa)
-- [ ] T015 [US2] Medir la compilación inicial y la recompilación incremental y anotarlas en `specs/001-editor-base/quickstart.md`
-- [ ] T016 [US2] Verificar que `cargo distrib` compila sin `dynamic_linking`
+- [x] T014 [US2] Verificar que `cargo dev` usa `dynamic_linking` y `rust-lld` (compilación completa exitosa)
+- [x] T015 [US2] Medir la compilación inicial y la recompilación incremental y anotarlas en `specs/001-editor-base/quickstart.md`
+- [x] T016 [US2] Verificar que `cargo distrib` compila sin `dynamic_linking`
 
 ---
 
@@ -74,11 +74,11 @@ formato de valores, árbol de la Jerarquía); las historias se validan con `quic
 
 **Independent Test**: clic en cada fila; la Luna en movimiento actualiza sus valores.
 
-- [ ] T017 [P] [US3] Prueba unitaria del cálculo del árbol (orden, profundidad, etiquetas, exclusión de `EditorOnly`) en `dragon/crates/dragon_editor/src/hierarchy.rs`
-- [ ] T018 [US3] Implementar la firma del árbol, la reconstrucción de filas, el área desplazable y los mensajes de escena vacía en `dragon/crates/dragon_editor/src/hierarchy.rs`
-- [ ] T019 [US3] Implementar el clic en filas (`PointerClick` → `Selection`) y el resaltado de la fila seleccionada en `dragon/crates/dragon_editor/src/hierarchy.rs`
-- [ ] T020 [P] [US3] Prueba unitaria del formato de valores y la conversión de rotación a grados en `dragon/crates/dragon_editor/src/inspector.rs`
-- [ ] T021 [US3] Implementar el Inspector (nombre, posición, rotación, escala; mensaje "Ningún objeto seleccionado"; actualización en vivo) en `dragon/crates/dragon_editor/src/inspector.rs`
+- [x] T017 [P] [US3] Prueba unitaria del cálculo del árbol (orden, profundidad, etiquetas, exclusión de `EditorOnly`) en `dragon/crates/dragon_editor/src/hierarchy.rs`
+- [x] T018 [US3] Implementar la firma del árbol, la reconstrucción de filas, el área desplazable y los mensajes de escena vacía en `dragon/crates/dragon_editor/src/hierarchy.rs`
+- [x] T019 [US3] Implementar el clic en filas (`PointerClick` → `Selection`) y el resaltado de la fila seleccionada en `dragon/crates/dragon_editor/src/hierarchy.rs`
+- [x] T020 [P] [US3] Prueba unitaria del formato de valores y la conversión de rotación a grados en `dragon/crates/dragon_editor/src/inspector.rs`
+- [x] T021 [US3] Implementar el Inspector (nombre, posición, rotación, escala; mensaje "Ningún objeto seleccionado"; actualización en vivo) en `dragon/crates/dragon_editor/src/inspector.rs`
 
 ---
 
@@ -88,17 +88,17 @@ formato de valores, árbol de la Jerarquía); las historias se validan con `quic
 
 **Independent Test**: arrastres y rueda sobre la Escena y sobre los paneles.
 
-- [ ] T022 [P] [US4] Prueba unitaria de `EditorCamera` (límites de distancia y de inclinación, transform derivada) en `dragon/crates/dragon_editor/src/viewport.rs`
-- [ ] T023 [US4] Implementar la navegación (arrastre iniciado sobre la Escena, rueda solo encima) en `dragon/crates/dragon_editor/src/viewport.rs`
+- [x] T022 [P] [US4] Prueba unitaria de `EditorCamera` (límites de distancia y de inclinación, transform derivada) en `dragon/crates/dragon_editor/src/viewport.rs`
+- [x] T023 [US4] Implementar la navegación (arrastre iniciado sobre la Escena, rueda solo encima) en `dragon/crates/dragon_editor/src/viewport.rs`
 
 ---
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T024 `cargo fmt --check` y `cargo clippy --workspace -- -D warnings` sin errores en `dragon/`
-- [ ] T025 `cargo test --workspace` en `dragon/`
-- [ ] T026 Ejecutar el editor y validar las cuatro historias según `quickstart.md`; anotar FPS y tiempo de arranque
-- [ ] T027 Actualizar `dragon/ROADMAP.md` y el estado de `spec.md`
+- [x] T024 `cargo fmt --check` y `cargo clippy --workspace -- -D warnings` sin errores en `dragon/`
+- [x] T025 `cargo test --workspace` en `dragon/`
+- [ ] T026 Ejecutar el editor y validar las cuatro historias según `quickstart.md`; anotar FPS y tiempo de arranque — **parcial**: historias 1–3 verificadas; falta la prueba manual de la cámara (historia 4) y ver cambiar en vivo la rotación del Planeta (ver `quickstart.md`)
+- [x] T027 Actualizar `dragon/ROADMAP.md` y el estado de `spec.md`
 
 ---
 

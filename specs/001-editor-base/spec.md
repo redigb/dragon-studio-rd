@@ -4,7 +4,7 @@
 
 **Created**: 2026-10-14
 
-**Status**: Draft
+**Status**: Implementada — pendiente la validación manual de la historia 4 (ver `quickstart.md`)
 
 **Input**: User description: "Primera implementación de Dragon Studio RD, solo sobre Bevy (sin
 Jackdaw): una ventana de editor con aspecto profesional donde se vea una escena, su jerarquía y un
@@ -200,6 +200,9 @@ botón central y usar la rueda; comprobar que la vista cambia y que los paneles 
 - El editor se ejecuta en un equipo de escritorio con GPU compatible con Vulkan, DirectX 12 o Metal;
   el equipo de referencia es el de RD (Windows 10).
 - En esta feature el Inspector es de solo lectura; editar valores llega en una feature posterior.
+- El Inspector muestra la transformación **local** (relativa al padre), como Unity y Godot. Un hijo
+  que se mueve porque gira su padre (la Luna) conserva sus valores locales; el objeto cuyos valores
+  cambian es el padre (el Planeta). *(Aclaración surgida al validar la historia 3.)*
 - Los menús de la barra superior son solo visuales en esta feature.
 - La escena de demostración es temporal; cargar y guardar escenas reales es una feature posterior.
 - La exportación a Android no forma parte de esta feature (ver ROADMAP); la feature no debe

@@ -122,3 +122,13 @@ repositorio (rutas indicadas) y contra la constitución v1.0.0.
   crate es pequeño y Bevy ya se enlaza dinámicamente. Cuando aparezca el runtime de juego
   (feature 003 de la hoja de ruta) se separará `dragon_runtime`, que debe compilar para Android
   (principio V) y no puede depender del editor.
+
+## R-13 · Reglas de `clippy` heredadas de Bevy (hallazgo de la implementación)
+
+- **Decision**: `dragon/` no define su propio `clippy.toml`, así que Cargo usa el de la raíz de
+  Bevy. Ese archivo prohíbe los métodos de `f32` no deterministas (`powf`, `sin`, `cos`, …); se usan
+  sus equivalentes de `bevy::math::ops`.
+- **Rationale**: los resultados matemáticos son idénticos en todas las plataformas (importante para
+  Android y para una futura red multijugador), y Dragon sigue las mismas reglas que Bevy.
+- **Medido**: build de distribución (`cargo distrib`) completa en 12 min 23 s; `clippy` en modo
+  desarrollo, 4 min 23 s la primera vez.

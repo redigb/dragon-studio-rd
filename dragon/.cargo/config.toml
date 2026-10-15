@@ -1,0 +1,11 @@
+# Configuración de compilación rápida (principio III, decisión R-09).
+
+[target.x86_64-pc-windows-msvc]
+# El linker de LLVM que trae rustup es mucho más rápido que link.exe de MSVC.
+linker = "rust-lld.exe"
+
+[alias]
+# Desarrollo: Bevy enlazado dinámicamente para recompilar en segundos.
+dev = "run -p dragon_editor --features dev"
+# Distribución: sin enlazado dinámico.
+distrib = "build -p dragon_editor --release"

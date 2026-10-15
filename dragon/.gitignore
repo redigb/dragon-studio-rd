@@ -1,0 +1,3 @@
+# El .gitignore de Bevy ignora Cargo.lock; el editor es una aplicación y
+# necesita builds reproducibles, así que lo versionamos.
+!Cargo.lock

@@ -7,7 +7,7 @@ Leyenda: ✅ terminada · 🔨 en curso · ⏳ pendiente
 
 | # | Feature | Qué entrega | Estado |
 |---|---------|-------------|--------|
-| 001 | [Editor base](../specs/001-editor-base/spec.md) | Ventana del editor (Jerarquía, Escena 3D, Inspector, barras), cámara orbital, selección, compilación rápida | 🔨 |
+| 001 | [Editor base](../specs/001-editor-base/spec.md) | Ventana del editor (Jerarquía, Escena 3D, Inspector, barras), cámara orbital, selección, compilación rápida | ✅ implementada · falta probar a mano la cámara (historia 4) |
 | 002 | Edición en el Inspector + deshacer/rehacer | Editar valores del `Transform` y de cualquier componente vía `Reflect`; historial de cambios | ⏳ |
 | 003 | Escenas y proyecto | Crear/abrir proyecto, guardar y cargar escenas, separar `dragon_runtime` del editor | ⏳ |
 | 004 | Herramientas en la Escena | Seleccionar con clic en el 3D, gizmos de mover/rotar/escalar, rejilla | ⏳ |
@@ -23,3 +23,6 @@ El orden puede cambiar; cualquier cambio se registra aquí con su motivo.
 ## Historial
 
 - 2026-10-14 — Constitución v1.0.0 ratificada. Inicio de la feature 001.
+- 2026-10-14 — Feature 001 implementada: compila en desarrollo y distribución, `clippy` y 10 pruebas
+  en verde, historias 1–3 validadas con capturas. Recompilación de la biblioteca: 3,67 s (meta 3 s).
+  Siguiente paso: probar la cámara a mano y empezar la 002.

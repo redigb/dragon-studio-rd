@@ -1,0 +1,1 @@
+Assets del editor (iconos, fuentes propias). La carpeta debe existir para la recarga en caliente.

@@ -1,0 +1,29 @@
+# Workspace de Dragon Studio RD.
+#
+# Es independiente del workspace de Bevy de la raíz (principio I de la constitución):
+# no figura en sus `members`, así que nunca hay que tocar el `Cargo.toml` de Bevy.
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97.1"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/redigb/dragon-studio-rd"
+
+[workspace.dependencies]
+bevy = { version = "0.20", features = ["bevy_feathers"] }
+
+# Toda dependencia que pida `bevy` recibe el Bevy de este fork (decisión R-01).
+[patch.crates-io]
+bevy = { path = ".." }
+
+# Velocidad de iteración (principio III): nuestro código con poca optimización para
+# compilar rápido y las dependencias (Bevy) optimizadas para que el editor vaya fluido.
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
